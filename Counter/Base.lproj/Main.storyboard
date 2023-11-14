@@ -66,7 +66,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="trash" catalog="system"/>
                                 <connections>
-                                    <action selector="deleteThatText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R2E-fc-sSu"/>
+                                    <action selector="deleteHistoryText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GWN-wf-eRE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vHs-ca-nNg">
@@ -77,7 +77,7 @@
                                     <color key="baseBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="deleteValue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sxs-vc-hfZ"/>
+                                    <action selector="deleteCountValue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9ZR-un-Xei"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -86,12 +86,12 @@
                     </view>
                     <connections>
                         <outlet property="changeButton" destination="urs-sI-HmJ" id="1F4-p1-bSj"/>
+                        <outlet property="countChangeLabel" destination="FiZ-Hz-rNz" id="Jsc-fe-LfN"/>
+                        <outlet property="countValueLabel" destination="Z8N-N5-Ao5" id="G3M-Pa-OQk"/>
                         <outlet property="deleteButton" destination="vHs-ca-nNg" id="chO-5Y-OaJ"/>
-                        <outlet property="deleteText" destination="dBN-R1-CFz" id="cLZ-0q-gUf"/>
+                        <outlet property="deleteHistoryButton" destination="dBN-R1-CFz" id="lsD-aR-es4"/>
+                        <outlet property="historyTextView" destination="Usf-2J-gvq" id="lQe-uJ-9h0"/>
                         <outlet property="minusButton" destination="a7H-1Y-bPc" id="mtG-Zs-4wC"/>
-                        <outlet property="prescriptionsForActions" destination="Usf-2J-gvq" id="xFh-Jt-bX0"/>
-                        <outlet property="topLevel" destination="FiZ-Hz-rNz" id="PPH-H4-0Ps"/>
-                        <outlet property="value" destination="Z8N-N5-Ao5" id="4j2-Jw-36M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -108,10 +108,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tableCellBlueTextColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

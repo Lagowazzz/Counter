@@ -1,74 +1,78 @@
-//
-//  ViewController.swift
-//  Counter
-//
-//  Created by Илья Ляшенко on 13.11.2023.
-//
+
 
 import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var deleteText: UIButton!
+    @IBOutlet weak private var deleteHistoryButton: UIButton!
+    
+    @IBOutlet weak var countChangeLabel: UILabel!
     
     
-    @IBOutlet weak var topLevel: UILabel!
+    @IBOutlet weak private var deleteButton: UIButton!
     
-    @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak private var minusButton: UIButton!
+    @IBOutlet weak private var countValueLabel: UILabel!
     
-    @IBOutlet weak var minusButton: UIButton!
-    @IBOutlet weak var value: UILabel!
     
-    @IBOutlet weak var prescriptionsForActions: UITextView!
+    @IBOutlet weak private var historyTextView: UITextView!
     
-    @IBOutlet weak var changeButton: UIButton!
     
-    override func viewDidLoad() {
+    @IBOutlet weak private var changeButton: UIButton!
+    
+    internal override func viewDidLoad() {
         super.viewDidLoad()
-        prescriptionsForActions.layer.borderWidth = 1.0
-        prescriptionsForActions.layer.borderColor = UIColor.black.cgColor // Do any additional setup after loading the view.
+        historyTextView.layer.borderWidth = 1.0
+        historyTextView.layer.borderColor = UIColor.black.cgColor
     }
     
-    func newDate() -> String {
-            let format = DateFormatter()
-            format.dateFormat = "dd.MM.yyyy HH:mm:ss"
-            return format.string(from: Date())
+    private func newDate() -> String {
+        let format = DateFormatter()
+        format.dateFormat = "dd.MM.yyyy HH:mm:ss"
+        return format.string(from: Date())
+    }
+    
+    
+    @IBAction private func deleteHistoryText(_ sender: Any) {
+        historyTextView.text = "История изменений:"
+    }
+    
+    
+    
+    
+    
+    @IBAction private func deleteCountValue(_ sender: Any) {
+        if let newValue = Int(countValueLabel.text ?? "0"),
+           newValue > 0 {
+            countValueLabel.text = "0"
+            historyTextView.text.append("\n\(newDate()): значение сброшено")
         }
-    
-    
-    @IBAction func deleteThatText(_ sender: Any) {
-        prescriptionsForActions.text = "История изменений:"
-    }
-    
-    
-    
-    
-    @IBAction func deleteValue(_ sender: Any) {
-        if let newValue = Int(value.text ?? "0"),
-           newValue > 0 {
-            value.text = "0"
-            prescriptionsForActions.text.append("\n\(newDate()): значение сброшено")
-          }
         
         
     }
     
-    @IBAction func minusOne(_ sender: Any) {
-        if let newValue = Int(value.text ?? "0"),
+    
+    @IBAction private func minusOne(_ sender: Any) {
+        if let newValue = Int(countValueLabel.text ?? "0"),
            newValue > 0 {
-            value.text = "\(newValue - 1)"
-            prescriptionsForActions.text.append("\n\(newDate()): значение изменено на - 1")}
-        else{
-            prescriptionsForActions.text.append("\n\(newDate()): попытка изменения значения счетчика ниже 0")
-        }}
-        
-        
-        @IBAction func plusOne(_ sender: Any) {
-            if let newValue = UInt(value.text ?? "0"){
-                value.text = "\(newValue + 1)"
-                prescriptionsForActions.text.append("\n\(newDate()): значение изменено на + 1")
-            }
+            countValueLabel.text = "\(newValue - 1)"
+            historyTextView.text.append("\n\(newDate()): значение изменено на - 1")
+            
+        } else {
+            
+            historyTextView.text.append("\n\(newDate()): попытка изменения значения счетчика ниже 0")
         }
         
     }
+    
+    
+    @IBAction private func plusOne(_ sender: Any) {
+        if let newValue = UInt(countValueLabel.text ?? "0"){
+            countValueLabel.text = "\(newValue + 1)"
+            historyTextView.text.append("\n\(newDate()): значение изменено на + 1")
+        }
+    }
+    
+}
+
 
