@@ -1,6 +1,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
     
     @IBOutlet weak private var deleteHistoryButton: UIButton!
     @IBOutlet weak var countChangeLabel: UILabel!
@@ -28,11 +29,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction private func deleteHistoryText(_ sender: Any) {
+        feedbackGenerator.prepare()
+        feedbackGenerator.impactOccurred()
         historyTextView.text = "История изменений:"
         scrollToBottom()
     }
     
     @IBAction private func deleteCountValue(_ sender: Any) {
+        feedbackGenerator.prepare()
+        feedbackGenerator.impactOccurred()
         if let newValue = Int(countValueLabel.text ?? "0"),
            newValue > 0 {
             countValueLabel.text = "0"
@@ -42,18 +47,24 @@ class ViewController: UIViewController {
     }
     
     @IBAction private func minusOne(_ sender: Any) {
+        feedbackGenerator.prepare()
+        feedbackGenerator.impactOccurred()
         if let newValue = Int(countValueLabel.text ?? "0"),
            newValue > 0 {
             countValueLabel.text = "\(newValue - 1)"
             historyTextView.text.append("\n\(newDate()): значение изменено на - 1")
             scrollToBottom()
         } else {
+            feedbackGenerator.prepare()
+            feedbackGenerator.impactOccurred()
             historyTextView.text.append("\n\(newDate()): попытка изменения значения счетчика ниже 0")
             scrollToBottom()
         }
     }
     
     @IBAction private func plusOne(_ sender: Any) {
+        feedbackGenerator.prepare()
+        feedbackGenerator.impactOccurred()
         if let newValue = UInt(countValueLabel.text ?? "0"){
             countValueLabel.text = "\(newValue + 1)"
             historyTextView.text.append("\n\(newDate()): значение изменено на + 1")

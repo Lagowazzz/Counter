@@ -13,9 +13,7 @@
 		693A87E42B020FF100C80525 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 693A87E22B020FF100C80525 /* Main.storyboard */; };
 		693A87E62B020FF200C80525 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 693A87E52B020FF200C80525 /* Assets.xcassets */; };
 		693A87E92B020FF200C80525 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 693A87E72B020FF200C80525 /* LaunchScreen.storyboard */; };
-		693A87F42B020FF200C80525 /* CounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693A87F32B020FF200C80525 /* CounterTests.swift */; };
-		693A87FE2B020FF200C80525 /* CounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693A87FD2B020FF200C80525 /* CounterUITests.swift */; };
-		693A88002B020FF200C80525 /* CounterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693A87FF2B020FF200C80525 /* CounterUITestsLaunchTests.swift */; };
+		698C6AF12B4E3DDF0077E8E8 /* SnowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698C6AF02B4E3DDF0077E8E8 /* SnowView.swift */; };
 		69A9CBF32B0803BB00098F5A /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A9CBF22B0803BB00098F5A /* SplashViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,10 +44,8 @@
 		693A87E82B020FF200C80525 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		693A87EA2B020FF200C80525 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		693A87EF2B020FF200C80525 /* CounterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CounterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		693A87F32B020FF200C80525 /* CounterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterTests.swift; sourceTree = "<group>"; };
 		693A87F92B020FF200C80525 /* CounterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CounterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		693A87FD2B020FF200C80525 /* CounterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterUITests.swift; sourceTree = "<group>"; };
-		693A87FF2B020FF200C80525 /* CounterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		698C6AF02B4E3DDF0077E8E8 /* SnowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowView.swift; sourceTree = "<group>"; };
 		69A9CBF22B0803BB00098F5A /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,8 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				693A87DB2B020FF100C80525 /* Counter */,
-				693A87F22B020FF200C80525 /* CounterTests */,
-				693A87FC2B020FF200C80525 /* CounterUITests */,
 				693A87DA2B020FF100C80525 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -109,25 +103,9 @@
 				693A87E72B020FF200C80525 /* LaunchScreen.storyboard */,
 				693A87EA2B020FF200C80525 /* Info.plist */,
 				69A9CBF22B0803BB00098F5A /* SplashViewController.swift */,
+				698C6AF02B4E3DDF0077E8E8 /* SnowView.swift */,
 			);
 			path = Counter;
-			sourceTree = "<group>";
-		};
-		693A87F22B020FF200C80525 /* CounterTests */ = {
-			isa = PBXGroup;
-			children = (
-				693A87F32B020FF200C80525 /* CounterTests.swift */,
-			);
-			path = CounterTests;
-			sourceTree = "<group>";
-		};
-		693A87FC2B020FF200C80525 /* CounterUITests */ = {
-			isa = PBXGroup;
-			children = (
-				693A87FD2B020FF200C80525 /* CounterUITests.swift */,
-				693A87FF2B020FF200C80525 /* CounterUITestsLaunchTests.swift */,
-			);
-			path = CounterUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +241,7 @@
 			files = (
 				693A87E12B020FF100C80525 /* ViewController.swift in Sources */,
 				693A87DD2B020FF100C80525 /* AppDelegate.swift in Sources */,
+				698C6AF12B4E3DDF0077E8E8 /* SnowView.swift in Sources */,
 				693A87DF2B020FF100C80525 /* SceneDelegate.swift in Sources */,
 				69A9CBF32B0803BB00098F5A /* SplashViewController.swift in Sources */,
 			);
@@ -272,7 +251,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				693A87F42B020FF200C80525 /* CounterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,8 +258,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				693A87FE2B020FF200C80525 /* CounterUITests.swift in Sources */,
-				693A88002B020FF200C80525 /* CounterUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

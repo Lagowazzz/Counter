@@ -4,11 +4,14 @@ import Foundation
 
 final class SplashViewController: UIViewController {
     private var timer = Timer()
-    private let timeInterval = 3.0
+    private let timeInterval = 5.0
     
     
     internal override func viewDidLoad() {
         super.viewDidLoad()
+        let snowView = SnowView(frame: view.bounds)
+        view.addSubview(snowView)
+
         timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(openNextView), userInfo: nil, repeats: false)
         
         mainLabel.alpha = 0.0
